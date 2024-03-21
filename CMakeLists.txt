@@ -30,16 +30,20 @@ project(Kernel-ARM~Actuator@FastModel C CXX ASM)
 set(TARGET "Kernel")
 
 # Set the kernel executable architecture
-set(ARCH "ARM")
+#set(ARCH "ARM")
+set(ARCH "x86")
 
 # Set the linker script
 set(LINKER_SCRIPT "Kernel.ld")
 
 # Append ARM Cortex-M3 specific flags
 # If compiler flags and linker flags need to be changed, one must do it before importing the common configuration
-set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -mthumb -mcpu=cortex-m3 -march=armv7-m")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mthumb -mcpu=cortex-m3 -march=armv7-m")
-set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} -mthumb -mcpu=cortex-m3 -march=armv7-m")
+#set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}  --specs=nosys.specs -mthumb -mcpu=cortex-m3 -march=armv7-m")
+set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}  -m32 -mno-avx")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --specs=nosys.specs -mthumb -mcpu=cortex-m3 -march=armv7-m")
+set(CMAKE_CXX_FLAGS   "${CMAKE_CXX_FLAGS}  -m32 -mno-avx")
+#set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} -mthumb -mcpu=cortex-m3 -march=armv7-m")
+set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} -m32 -mno-avx")
 
 # Add additional definitions
 if (DEFINED ENV{KERNEL_DEMO_BUILD})

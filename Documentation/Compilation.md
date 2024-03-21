@@ -13,6 +13,11 @@ cd Kernel-Actuator
 git submodule update --init
 ```
 
+### Step 1.5: install gcc-multilib for x86:
+```bash
+sudo apt install -y  gcc-multilib g++-multilib
+```
+
 ### Step 2: Select a CMake cross-compiler toolchain
 
 This repository provides the following toolchains: 

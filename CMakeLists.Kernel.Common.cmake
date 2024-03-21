@@ -25,11 +25,11 @@ set(CMAKE_CXX_STANDARD 20)
 # @note `--fno-use-cxa-atexit` tells the compiler not to generate tear down code for the kernel.
 # @note `-x assembler-with-cpp` tells the assembler that assembly files may contain C directives.
 #
-set(CMAKE_C_FLAGS                   "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-psabi --specs=nosys.specs -fdata-sections -ffunction-sections -ffreestanding")
+set(CMAKE_C_FLAGS                   "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-psabi -fdata-sections -ffunction-sections -ffreestanding")
 set(CMAKE_C_FLAGS_DEBUG             "${CMAKE_C_FLAGS_DEBUG} -O0 -DDEBUG")
 set(CMAKE_C_FLAGS_RELEASE           "${CMAKE_C_FLAGS_RELEASE} -Os")
 
-set(CMAKE_CXX_FLAGS                 "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wno-psabi --specs=nosys.specs -fdata-sections -ffunction-sections -ffreestanding -fno-exceptions -fno-rtti -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-use-cxa-atexit")
+set(CMAKE_CXX_FLAGS                 "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wno-psabi -fdata-sections -ffunction-sections -ffreestanding -fno-exceptions -fno-rtti -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-use-cxa-atexit")
 set(CMAKE_CXX_FLAGS_DEBUG           "${CMAKE_CXX_FLAGS_DEBUG} -O0 -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE         "${CMAKE_CXX_FLAGS_RELEASE} -Os")
 
